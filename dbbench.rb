@@ -1,9 +1,9 @@
 class Dbbench < Formula
   desc "dbbench is a simple database benchmarking tool which supports several databases"
   homepage ""
-  url "https://github.com/sj14/dbbench/releases/download/v0.2.0/dbbench_0.2.0_darwin_amd64.tar.gz"
-  version "0.2.0"
-  sha256 "e56d15cf4fd2fc5ebd156a07fcb4b750910bc0bf433e156219ef683fde1c486e"
+  url "https://github.com/sj14/dbbench/releases/download/v0.3.0/dbbench_0.3.0_darwin_amd64.tar.gz"
+  version "0.3.0"
+  sha256 "65cf6dfb2b6f9984eb4d0b602a86fc52a5475992a213ec76c2b196cd560d6991"
 
   def install
     bin.install "dbbench"
