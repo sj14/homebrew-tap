@@ -2,24 +2,24 @@
 class Epoch < Formula
   desc "Easily convert epoch timestamps to human readable formats and vice versa."
   homepage ""
-  version "3.0.3-rc7"
+  version "3.1.1"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/sj14/epoch/releases/download/v3.0.3-rc7/epoch_3.0.3-rc7_darwin_amd64.tar.gz"
-    sha256 "0d737acdcfaf8b5eb662a40e6543b707fdb219f5084ff55a8d159cab71749046"
+    url "https://github.com/sj14/epoch/releases/download/v3.1.1/epoch_3.1.1_darwin_amd64.tar.gz"
+    sha256 "1f29119fe59854949e59f90d61f616b97ee582487139ddbaf5a13dc397df0644"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/sj14/epoch/releases/download/v3.0.3-rc7/epoch_3.0.3-rc7_linux_amd64.tar.gz"
-      sha256 "29d734cfea295d2d1d8383c21025b0deec14998e01a87fb504520fa756f1fe9e"
+      url "https://github.com/sj14/epoch/releases/download/v3.1.1/epoch_3.1.1_linux_amd64.tar.gz"
+      sha256 "19b02a417d3d1ee8914fb7efbf8db81cbf4658f02d008c349e39d9f92da61e1d"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/sj14/epoch/releases/download/v3.0.3-rc7/epoch_3.0.3-rc7_linux_arm64.tar.gz"
-        sha256 "05d8c31770dee230e68d9d5768c17af99c2d4f57fccfea9228a6dc8ac8cda4f6"
+        url "https://github.com/sj14/epoch/releases/download/v3.1.1/epoch_3.1.1_linux_arm64.tar.gz"
+        sha256 "64dbb13b44d782719f4e170b4c9a7c1c97bda5abea659e02a5221993e35c45ea"
       else
-        url "https://github.com/sj14/epoch/releases/download/v3.0.3-rc7/epoch_3.0.3-rc7_linux_armv6.tar.gz"
-        sha256 "f9a9b2ebb5de0eef94534205255be7e41b438023bb75269ea9eeb11e6fe313ce"
+        url "https://github.com/sj14/epoch/releases/download/v3.1.1/epoch_3.1.1_linux_armv6.tar.gz"
+        sha256 "4875979f653c3cadf10abb5ff6a3ef1003b277502b3e46e25e4c23089ad4a817"
       end
     end
   end
