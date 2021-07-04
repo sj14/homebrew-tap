@@ -5,24 +5,29 @@
 class Epoch < Formula
   desc "Easily convert epoch timestamps to human readable formats and vice versa."
   homepage ""
-  version "3.1.3"
+  version "3.2.0-rc0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/sj14/epoch/releases/download/v3.1.3/epoch_3.1.3_darwin_amd64.tar.gz"
-    sha256 "301824e3b26e922cc31d5ccb4448bbe0174fa697455c0146b7ba53416a1acbfd"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/sj14/epoch/releases/download/v3.2.0-rc0/epoch_3.2.0-rc0_darwin_amd64.tar.gz"
+      sha256 "c92aa39759c49f98cb5c18752370d8d55d491ee56107f2c09595251f1bf28538"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/sj14/epoch/releases/download/v3.1.3/epoch_3.1.3_linux_amd64.tar.gz"
-    sha256 "f9bfa2e8a726b33c6e1216ab75d658e1a9353137c9ac5c8af6a91408b6c44624"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/sj14/epoch/releases/download/v3.1.3/epoch_3.1.3_linux_armv6.tar.gz"
-    sha256 "df253ab5382ccedfdcf90610375540dbbf9b797a8c26a953b8c864e2ebf6389e"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/sj14/epoch/releases/download/v3.1.3/epoch_3.1.3_linux_arm64.tar.gz"
-    sha256 "5870f826db6219b73d7852d55ae9c116b612da8813749eb81a42b2b8afb619c8"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/sj14/epoch/releases/download/v3.2.0-rc0/epoch_3.2.0-rc0_linux_amd64.tar.gz"
+      sha256 "8bea80c0be321b61afc8d58d8eed6935ca18459be80366d1427de0a1781a60d4"
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/sj14/epoch/releases/download/v3.2.0-rc0/epoch_3.2.0-rc0_linux_armv6.tar.gz"
+      sha256 "358922b82a268d208bfaa87d43acdd7ba320ef7e6918cb4b2c89c25a568a80b1"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/sj14/epoch/releases/download/v3.2.0-rc0/epoch_3.2.0-rc0_linux_arm64.tar.gz"
+      sha256 "59d517fe39d848a9036f58d0e55e0027f538c4e0bf817c15fcb08e361fb5e25e"
+    end
   end
 
   def install
