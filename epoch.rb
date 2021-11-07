@@ -5,32 +5,51 @@
 class Epoch < Formula
   desc "Easily convert epoch timestamps to human readable formats and vice versa."
   homepage ""
-  version "3.2.0"
-  bottle :unneeded
+  version "3.2.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sj14/epoch/releases/download/v3.2.0/epoch_3.2.0_darwin_amd64.tar.gz"
-      sha256 "141b922144b2b4c3b9321796a5224da539b5aca85408fd66fec7d8354e435bcd"
+      url "https://github.com/sj14/epoch/releases/download/v3.2.1/epoch_3.2.1_darwin_amd64.tar.gz"
+      sha256 "edefe72d5ba83e95ce4d69c223402a3792fa3cd0d2751e9c80ded01eb189e6f4"
+
+      def install
+        bin.install "epoch"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/sj14/epoch/releases/download/v3.2.1/epoch_3.2.1_darwin_arm64.tar.gz"
+      sha256 "14654c058eebfa8827d01d1c6a5d964579f8e003ce36deabd9e9b52a216684e8"
+
+      def install
+        bin.install "epoch"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/sj14/epoch/releases/download/v3.2.0/epoch_3.2.0_linux_amd64.tar.gz"
-      sha256 "e61feddb42ce3d8fba183894f20371eebcd0e969d105f37d20c02089401b0a75"
+      url "https://github.com/sj14/epoch/releases/download/v3.2.1/epoch_3.2.1_linux_amd64.tar.gz"
+      sha256 "d80ff073d7986dcd3b088213ed72eb4e1bebf496e6f4e01420e4aa3448cd5eed"
+
+      def install
+        bin.install "epoch"
+      end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/sj14/epoch/releases/download/v3.2.0/epoch_3.2.0_linux_armv6.tar.gz"
-      sha256 "ea3f8794e69c690e3db6dbb33cd8e0a4671e98341ea02f2a254daf34925fb0ac"
+      url "https://github.com/sj14/epoch/releases/download/v3.2.1/epoch_3.2.1_linux_armv6.tar.gz"
+      sha256 "a840d6d7099e9fd544aaa17abc66a971b96d9f529ac82bc07bac24aa31d279eb"
+
+      def install
+        bin.install "epoch"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sj14/epoch/releases/download/v3.2.0/epoch_3.2.0_linux_arm64.tar.gz"
-      sha256 "5aa10010a754fbbfad491c46664efb2b32354c47add93437918fa88d881a0d0e"
-    end
-  end
+      url "https://github.com/sj14/epoch/releases/download/v3.2.1/epoch_3.2.1_linux_arm64.tar.gz"
+      sha256 "3fbc7d459743e55331badcfbe3e412649efc0ae78cc2865f4287ca1167b36bdf"
 
-  def install
-    bin.install "epoch"
+      def install
+        bin.install "epoch"
+      end
+    end
   end
 end
