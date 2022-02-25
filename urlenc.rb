@@ -5,20 +5,20 @@
 class Urlenc < Formula
   desc "Convert an URL-encoded or URL-decoded input string."
   homepage ""
-  version "0.0.1-rc.1"
+  version "0.0.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/sj14/urlenc/releases/download/v0.0.1-rc.1/urlenc_0.0.1-rc.1_darwin_arm64.tar.gz"
-      sha256 "28d15e0fbeceeeb2d5ae83fcdb9d0b746a309336a6451d94fdf39837438f3ee0"
+    if Hardware::CPU.intel?
+      url "https://github.com/sj14/urlenc/releases/download/v0.0.1/urlenc_0.0.1_darwin_amd64.tar.gz"
+      sha256 "797388be2bff85435865af71652cc3a8102bd1b7f8178e766c395fa0c8875c15"
 
       def install
         bin.install "urlenc"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sj14/urlenc/releases/download/v0.0.1-rc.1/urlenc_0.0.1-rc.1_darwin_amd64.tar.gz"
-      sha256 "d5fff2c1ddc061cec28a59226bff5255872dafb911f3001cf0bb0d84be84b91d"
+    if Hardware::CPU.arm?
+      url "https://github.com/sj14/urlenc/releases/download/v0.0.1/urlenc_0.0.1_darwin_arm64.tar.gz"
+      sha256 "e34ce55c70ef16a0f9bcf9b8e03c04e50d3e0d1025c81ad5d23862747b6d7780"
 
       def install
         bin.install "urlenc"
@@ -28,24 +28,24 @@ class Urlenc < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sj14/urlenc/releases/download/v0.0.1-rc.1/urlenc_0.0.1-rc.1_linux_arm64.tar.gz"
-      sha256 "04a0167631d672b655c7d5a56f6f26d4c965454ed1df6710b8211d2fd5b86386"
-
-      def install
-        bin.install "urlenc"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/sj14/urlenc/releases/download/v0.0.1-rc.1/urlenc_0.0.1-rc.1_linux_armv6.tar.gz"
-      sha256 "d274c29eae51a89a3c9013d69162c5cdc4eaf65816f89a9f6d71b68b7f6ba925"
+      url "https://github.com/sj14/urlenc/releases/download/v0.0.1/urlenc_0.0.1_linux_arm64.tar.gz"
+      sha256 "0913be9401a6e548afa6494a6b691e0c4380c7fee8f4f103d11806363e6673bf"
 
       def install
         bin.install "urlenc"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/sj14/urlenc/releases/download/v0.0.1-rc.1/urlenc_0.0.1-rc.1_linux_amd64.tar.gz"
-      sha256 "e8b060fe46cf5be560747aa5fcac0543bc3a6fd5b7c3b7da55b44e77fa19b4b6"
+      url "https://github.com/sj14/urlenc/releases/download/v0.0.1/urlenc_0.0.1_linux_amd64.tar.gz"
+      sha256 "680546dcc1b64e0c83b983df4126ae9b44c374f147900d7767f93a5f2dcf9c6f"
+
+      def install
+        bin.install "urlenc"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/sj14/urlenc/releases/download/v0.0.1/urlenc_0.0.1_linux_armv6.tar.gz"
+      sha256 "de1e692a1a779b588c1ca541126b18b62b5e6c061844853f2fdac3fc23a29a86"
 
       def install
         bin.install "urlenc"
