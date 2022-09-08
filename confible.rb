@@ -5,50 +5,42 @@
 class Confible < Formula
   desc "Confible is a simple configuration tool for your local machine."
   homepage ""
-  version "0.2.0"
+  version "0.3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/sj14/confible/releases/download/v0.2.0/confible_0.2.0_darwin_arm64.tar.gz"
-      sha256 "89980532a336b993221092dc58cbdb927d848405b5b87dbfb9a183646d3bb505"
+    if Hardware::CPU.intel?
+      url "https://github.com/sj14/confible/releases/download/v0.3.0/confible_0.3.0_darwin_amd64"
+      sha256 "9157d274d03f740519c526a9ec5fc21c479abcaf465124830b82e3d67aee5d76"
 
       def install
-        bin.install "confible"
+        bin.install "confible_0.3.0_darwin_amd64" => "confible"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sj14/confible/releases/download/v0.2.0/confible_0.2.0_darwin_amd64.tar.gz"
-      sha256 "5dac1e599916425751b6b5b29948e8063ac64805cecf4c6c6c7a43dcb1da9916"
+    if Hardware::CPU.arm?
+      url "https://github.com/sj14/confible/releases/download/v0.3.0/confible_0.3.0_darwin_arm64"
+      sha256 "6e84e5143fe65adf85de984ef6b37e52aa08db214634d30ef2cda982b8d451db"
 
       def install
-        bin.install "confible"
+        bin.install "confible_0.3.0_darwin_arm64" => "confible"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/sj14/confible/releases/download/v0.2.0/confible_0.2.0_linux_amd64.tar.gz"
-      sha256 "94d9d9adbd963b7793f33ef7b5886c020e1315817a0d8448eed0cc450b4ede56"
+      url "https://github.com/sj14/confible/releases/download/v0.3.0/confible_0.3.0_linux_amd64"
+      sha256 "76b9ede1d8e61239e66ec322a8aace24ea42651cf2938008da6b32a8515498ba"
 
       def install
-        bin.install "confible"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/sj14/confible/releases/download/v0.2.0/confible_0.2.0_linux_armv6.tar.gz"
-      sha256 "811fc87a7363b3705f746ee263d2765ec7bf0417bdecae27fc7e4b6ff7d330f8"
-
-      def install
-        bin.install "confible"
+        bin.install "confible_0.3.0_linux_amd64" => "confible"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sj14/confible/releases/download/v0.2.0/confible_0.2.0_linux_arm64.tar.gz"
-      sha256 "7b332eddb7e120db7ee6582fe3779aa2fc27c06be2341a9d98c97c5506f6ac67"
+      url "https://github.com/sj14/confible/releases/download/v0.3.0/confible_0.3.0_linux_arm64"
+      sha256 "aa5c28ae054033f8af962477bf3c713fce1169e417869358f17db1ce267d162f"
 
       def install
-        bin.install "confible"
+        bin.install "confible_0.3.0_linux_arm64" => "confible"
       end
     end
   end
