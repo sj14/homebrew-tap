@@ -5,42 +5,42 @@
 class Kubedump < Formula
   desc "Tool for dumping manifests from your Kubernetes clusters"
   homepage ""
-  version "0.5.0"
+  version "0.6.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/sj14/kubedump/releases/download/v0.5.0/kubedump_0.5.0_darwin_amd64"
-      sha256 "5b32a339229d637f72999e2c872d80cf25ff4301b29d1e5f603086aadde42a81"
+    if Hardware::CPU.arm?
+      url "https://github.com/sj14/kubedump/releases/download/v0.6.0/kubedump_0.6.0_darwin_arm64"
+      sha256 "98efb556046d86fdc9fae770a68c9530ad7a6efb155838395485d08aa848e480"
 
       def install
-        bin.install "kubedump_0.5.0_darwin_amd64" => "kubedump"
+        bin.install "kubedump_0.6.0_darwin_arm64" => "kubedump"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/sj14/kubedump/releases/download/v0.5.0/kubedump_0.5.0_darwin_arm64"
-      sha256 "ce1f96ab6ead8f081569533d8531c537cf2d0d2a3da05ff79d90ac366907a43f"
+    if Hardware::CPU.intel?
+      url "https://github.com/sj14/kubedump/releases/download/v0.6.0/kubedump_0.6.0_darwin_amd64"
+      sha256 "62e9ccc38f1f5418cb932744ddfd08ee3f816b68af1463d53f1034fa09768021"
 
       def install
-        bin.install "kubedump_0.5.0_darwin_arm64" => "kubedump"
+        bin.install "kubedump_0.6.0_darwin_amd64" => "kubedump"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sj14/kubedump/releases/download/v0.5.0/kubedump_0.5.0_linux_arm64"
-      sha256 "08a026ce428438b680e7dcbc16facdd3bd32eb4d59d84174b3d9c540da90265d"
+    if Hardware::CPU.intel?
+      url "https://github.com/sj14/kubedump/releases/download/v0.6.0/kubedump_0.6.0_linux_amd64"
+      sha256 "0fd7a881c7c72bf98f07b175915de25fe8b8c2b2760e1d7b329404992eb03809"
 
       def install
-        bin.install "kubedump_0.5.0_linux_arm64" => "kubedump"
+        bin.install "kubedump_0.6.0_linux_amd64" => "kubedump"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sj14/kubedump/releases/download/v0.5.0/kubedump_0.5.0_linux_amd64"
-      sha256 "2a8a488ff187a112fc3550ef13241af32768b4f49e0dc70f3b5aa78b3b58d5c0"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/sj14/kubedump/releases/download/v0.6.0/kubedump_0.6.0_linux_arm64"
+      sha256 "babd67f76498201fc1b380d389414657ec78512b64bb76b10d645a0724e39cf0"
 
       def install
-        bin.install "kubedump_0.5.0_linux_amd64" => "kubedump"
+        bin.install "kubedump_0.6.0_linux_arm64" => "kubedump"
       end
     end
   end
