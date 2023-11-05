@@ -5,42 +5,42 @@
 class Dbbench < Formula
   desc "dbbench is a simple database benchmarking tool which supports several databases"
   homepage ""
-  version "0.6.9"
+  version "0.6.10"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sj14/dbbench/releases/download/v0.6.9/dbbench_0.6.9_darwin_amd64"
-      sha256 "f88b91100c5da5109dc9a3826b82a0d90eb652fa7bdea144c2b4a622d6d20bd9"
+      url "https://github.com/sj14/dbbench/releases/download/v0.6.10/dbbench_0.6.10_darwin_amd64"
+      sha256 "3ee7890e1c5c2999821e48eb321913e4f6125009a0e02836df63bf95ff1fca70"
 
       def install
-        bin.install "dbbench_0.6.9_darwin_amd64" => "dbbench"
+        bin.install "dbbench_0.6.10_darwin_amd64" => "dbbench"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sj14/dbbench/releases/download/v0.6.9/dbbench_0.6.9_darwin_arm64"
-      sha256 "e4b406c86b0bbc3287b11d5b1ec2a8176449dc599f5cc27ee9f796c7545fbf11"
+      url "https://github.com/sj14/dbbench/releases/download/v0.6.10/dbbench_0.6.10_darwin_arm64"
+      sha256 "3887a2d88ea675b0086badb2bb1fbd99aa009e92463c186ec96b213cbbc6c01e"
 
       def install
-        bin.install "dbbench_0.6.9_darwin_arm64" => "dbbench"
+        bin.install "dbbench_0.6.10_darwin_arm64" => "dbbench"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/sj14/dbbench/releases/download/v0.6.9/dbbench_0.6.9_linux_amd64"
-      sha256 "79f4923b15e39dfc6229d3b1b06cfdaf063340264019306ae70ac683c5bb56fc"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/sj14/dbbench/releases/download/v0.6.10/dbbench_0.6.10_linux_arm64"
+      sha256 "ddc3aaef5338f4231f9acd0656cb6a2f02aef6743922a089df5f42cc4bb99993"
 
       def install
-        bin.install "dbbench_0.6.9_linux_amd64" => "dbbench"
+        bin.install "dbbench_0.6.10_linux_arm64" => "dbbench"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sj14/dbbench/releases/download/v0.6.9/dbbench_0.6.9_linux_arm64"
-      sha256 "cf9819dd9e9a9d66abe2fbba95293b121aa76dd51260636c2026cf0f7bbda964"
+    if Hardware::CPU.intel?
+      url "https://github.com/sj14/dbbench/releases/download/v0.6.10/dbbench_0.6.10_linux_amd64"
+      sha256 "eab91ae6e6db5e5b7d2f6129d958bf59d6955f372273fa8d26bf347e330f9544"
 
       def install
-        bin.install "dbbench_0.6.9_linux_arm64" => "dbbench"
+        bin.install "dbbench_0.6.10_linux_amd64" => "dbbench"
       end
     end
   end
