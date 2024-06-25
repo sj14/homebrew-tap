@@ -5,42 +5,46 @@
 class Multicode < Formula
   desc "Decode bits, hex, base64 and protobuf recursively with a single command"
   homepage ""
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/sj14/multicode/releases/download/v0.2.1/decode_0.2.1_darwin_arm64"
-      sha256 "8ad798aa8b2b4b057d7faaafa12604d298ce80b6df29c07ad6d4e3e5ed9c2d8b"
+    on_intel do
+      url "https://github.com/sj14/multicode/releases/download/v0.2.2/decode_0.2.2_darwin_amd64"
+      sha256 "486a67fa35323b1d266e13ef75ae034b2b566b66c20299d5b9799c9a430bf886"
 
       def install
-        bin.install "decode_0.2.1_darwin_arm64" => "decode"
+        bin.install "decode_0.2.2_darwin_amd64" => "decode"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sj14/multicode/releases/download/v0.2.1/decode_0.2.1_darwin_amd64"
-      sha256 "c266afd077d0d278177735404fd06d4defb21707ffe15bb928f41ef2e2a27be6"
+    on_arm do
+      url "https://github.com/sj14/multicode/releases/download/v0.2.2/decode_0.2.2_darwin_arm64"
+      sha256 "287666a942b3bc2fd96a397e3fa719e3a3a2e4d3311bc5ee5b3e81b0b054e0a5"
 
       def install
-        bin.install "decode_0.2.1_darwin_amd64" => "decode"
+        bin.install "decode_0.2.2_darwin_arm64" => "decode"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/sj14/multicode/releases/download/v0.2.1/decode_0.2.1_linux_amd64"
-      sha256 "8c0b3a9cf8ecfadfcb365d8739f5d994510b72cfd8d719e87bcd9bc8adc0c3b0"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/sj14/multicode/releases/download/v0.2.2/decode_0.2.2_linux_amd64"
+        sha256 "4366359b58c680d21835fac4a5452610602e48a8c17633448110d3f810eea02b"
 
-      def install
-        bin.install "decode_0.2.1_linux_amd64" => "decode"
+        def install
+          bin.install "decode_0.2.2_linux_amd64" => "decode"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sj14/multicode/releases/download/v0.2.1/decode_0.2.1_linux_arm64"
-      sha256 "620188d827f47232e94fd8830897bf35897f16a64844a46524c72e0df1794048"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/sj14/multicode/releases/download/v0.2.2/decode_0.2.2_linux_arm64"
+        sha256 "43a253db6e1f5f6c7642f46b6a7c0444ee144dfb5d2c0f567cb240481b656b48"
 
-      def install
-        bin.install "decode_0.2.1_linux_arm64" => "decode"
+        def install
+          bin.install "decode_0.2.2_linux_arm64" => "decode"
+        end
       end
     end
   end
