@@ -5,42 +5,46 @@
 class Astral < Formula
   desc "Calculations for the position of the sun and moon."
   homepage ""
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/sj14/astral/releases/download/v0.2.1/astral_0.2.1_darwin_amd64"
-      sha256 "57c8212393d7ca4ebf2baf3e5573e3222380310beecf727e0c66985ea9b51c38"
+    on_intel do
+      url "https://github.com/sj14/astral/releases/download/v0.2.2/astral_0.2.2_darwin_amd64"
+      sha256 "9b04ad36bb2d2f0032accbdfd32c4efa2206cbfbd8686bca6c46c768c755e497"
 
       def install
-        bin.install "astral_0.2.1_darwin_amd64" => "astral"
+        bin.install "astral_0.2.2_darwin_amd64" => "astral"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/sj14/astral/releases/download/v0.2.1/astral_0.2.1_darwin_arm64"
-      sha256 "53ffd04c795e84dd43439c83c8dc0e6e1f4fae84278c8a4043adc6f50ddc1001"
+    on_arm do
+      url "https://github.com/sj14/astral/releases/download/v0.2.2/astral_0.2.2_darwin_arm64"
+      sha256 "5ef8ef99015be5d2172203fc03805ca8ee935903e1b2f579b2f4d556027fbf6d"
 
       def install
-        bin.install "astral_0.2.1_darwin_arm64" => "astral"
+        bin.install "astral_0.2.2_darwin_arm64" => "astral"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/sj14/astral/releases/download/v0.2.1/astral_0.2.1_linux_amd64"
-      sha256 "a255a6044fd3e9065155c6a36820d15b899baaed262f9d117ae41560c3ff0f75"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/sj14/astral/releases/download/v0.2.2/astral_0.2.2_linux_amd64"
+        sha256 "6e9a3b8fe08b15801391bd277bc30a8cade7abce1be289f485f8d5bb29da6f6b"
 
-      def install
-        bin.install "astral_0.2.1_linux_amd64" => "astral"
+        def install
+          bin.install "astral_0.2.2_linux_amd64" => "astral"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sj14/astral/releases/download/v0.2.1/astral_0.2.1_linux_arm64"
-      sha256 "c1cefc330d344c2f37ce908b65f9ea802f6eefe4dbb9e585b9730c9068e7b188"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/sj14/astral/releases/download/v0.2.2/astral_0.2.2_linux_arm64"
+        sha256 "3e7ae6d602df623b848d426e239d64764cb756ee6a0649b5323a2215def3ba4f"
 
-      def install
-        bin.install "astral_0.2.1_linux_arm64" => "astral"
+        def install
+          bin.install "astral_0.2.2_linux_arm64" => "astral"
+        end
       end
     end
   end
