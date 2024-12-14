@@ -5,23 +5,23 @@
 class Jellyctl < Formula
   desc "A CLI for managing your Jellyfin server"
   homepage ""
-  version "0.3.0"
+  version "0.4.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/sj14/jellyctl/releases/download/v0.3.0/jellyctl_0.3.0_darwin_amd64"
-      sha256 "ee1aa06cea53c432f3a97a3159d1d0240bef4143f0110cb1efe65edd93c6ca56"
+      url "https://github.com/sj14/jellyctl/releases/download/v0.4.0/jellyctl_0.4.0_darwin_amd64"
+      sha256 "e24c2cbac791402193cefa758fa6b4ca2b02e4fce0b50605b1d03b0177cade3c"
 
       def install
-        bin.install "jellyctl_0.3.0_darwin_amd64" => "jellyctl"
+        bin.install "jellyctl_0.4.0_darwin_amd64" => "jellyctl"
       end
     end
     on_arm do
-      url "https://github.com/sj14/jellyctl/releases/download/v0.3.0/jellyctl_0.3.0_darwin_arm64"
-      sha256 "5a274470b5d4f08b26e3387edec7cc94c6284ffe570f61cb4b4901f0e8e8c258"
+      url "https://github.com/sj14/jellyctl/releases/download/v0.4.0/jellyctl_0.4.0_darwin_arm64"
+      sha256 "c543cf1e880c5bc60999555b72f0585b962f4943fefb49ff337bcccd58c96f2a"
 
       def install
-        bin.install "jellyctl_0.3.0_darwin_arm64" => "jellyctl"
+        bin.install "jellyctl_0.4.0_darwin_arm64" => "jellyctl"
       end
     end
   end
@@ -29,21 +29,21 @@ class Jellyctl < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/sj14/jellyctl/releases/download/v0.3.0/jellyctl_0.3.0_linux_amd64"
-        sha256 "578e7e2bc24b37318cabe4da5d6d022137dd9d5b67b9120b1707463b0d6962a6"
+        url "https://github.com/sj14/jellyctl/releases/download/v0.4.0/jellyctl_0.4.0_linux_amd64"
+        sha256 "6225b12bb0c41c6f41f8d7d9a02ddba582f67b801db7ffa6ae0e8dbbfc6f8a06"
 
         def install
-          bin.install "jellyctl_0.3.0_linux_amd64" => "jellyctl"
+          bin.install "jellyctl_0.4.0_linux_amd64" => "jellyctl"
         end
       end
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/sj14/jellyctl/releases/download/v0.3.0/jellyctl_0.3.0_linux_arm64"
-        sha256 "88aa86505ae59261091b5be60b700055c059170b7e591a91c4d46c916fde4941"
+        url "https://github.com/sj14/jellyctl/releases/download/v0.4.0/jellyctl_0.4.0_linux_arm64"
+        sha256 "b583b9a4747369dda72ca2b27b3b8f4af6fcc804dbf4c18f9da8a23ed4e839ae"
 
         def install
-          bin.install "jellyctl_0.3.0_linux_arm64" => "jellyctl"
+          bin.install "jellyctl_0.4.0_linux_arm64" => "jellyctl"
         end
       end
     end
