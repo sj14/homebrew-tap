@@ -5,20 +5,20 @@
 class Epoch < Formula
   desc "Easily convert epoch timestamps to human readable formats and vice versa."
   homepage ""
-  version "0.2.0"
+  version "0.2.2"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/sj14/epoch/releases/download/v0.2.0/epoch_0.2.0_darwin_arm64"
-      sha256 "7acf0bdfb3fadcc81cc67bc210744ae316d5ab69cbd9b059e6d5162f50192809"
+    if Hardware::CPU.intel?
+      url "https://github.com/sj14/epoch/releases/download/v0.2.2/epoch_0.2.2_darwin_amd64"
+      sha256 "fa786103e3db4774d58249700356ee6a34c8eaf2bf346c01d1f6b96f199d1492"
 
       def install
         bin.install "epoch"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sj14/epoch/releases/download/v0.2.0/epoch_0.2.0_darwin_amd64"
-      sha256 "2512a9a83e640da315da45ff0d87dfdfcef4f5b12526e864128d9e53c8c66e52"
+    if Hardware::CPU.arm?
+      url "https://github.com/sj14/epoch/releases/download/v0.2.2/epoch_0.2.2_darwin_arm64"
+      sha256 "c0de3bbfbe1849d774ff63d83405f168fc0b099f87206188994ea3b6ffc46386"
 
       def install
         bin.install "epoch"
@@ -27,20 +27,24 @@ class Epoch < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/sj14/epoch/releases/download/v0.2.0/epoch_0.2.0_linux_arm64"
-      sha256 "e3dde8d704f17f548b06215f53d2664a4beb5cd466d55f5932feccd3d6dc6bc4"
+    if Hardware::CPU.intel?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/sj14/epoch/releases/download/v0.2.2/epoch_0.2.2_linux_amd64"
+        sha256 "a1e0452e1c721e747670151e36c88d9728ac1e8ac344b2ac05e473856bc4607b"
 
-      def install
-        bin.install "epoch"
+        def install
+          bin.install "epoch"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/sj14/epoch/releases/download/v0.2.0/epoch_0.2.0_linux_amd64"
-      sha256 "5e5afdf42367518a475f44690342312c2e0d4ac8d634c118ad4dcf389e391cde"
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/sj14/epoch/releases/download/v0.2.2/epoch_0.2.2_linux_arm64"
+        sha256 "3af1dca90474270106cae8743fc3e3d9477827488c8ca668d0f5a602d1b15d4f"
 
-      def install
-        bin.install "epoch"
+        def install
+          bin.install "epoch"
+        end
       end
     end
   end
