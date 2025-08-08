@@ -5,46 +5,40 @@
 class IpAuth < Formula
   desc "A reverse proxy which authorizes client IP addresses"
   homepage ""
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/sj14/ip-auth/releases/download/v0.1.0/ip-auth_0.1.0_darwin_amd64"
-      sha256 "2031575b4191f957092cc62448352a1ab5db1efe5a62feb46b57ee4024a8a3c0"
+      url "https://github.com/sj14/ip-auth/releases/download/v0.1.1/ip-auth_0.1.1_darwin_amd64"
+      sha256 "cb70fbaa82f60cdf88814a9a7a010dbbca01927a27ff75bbcfbd2ec0ae99ec6f"
 
       def install
-        bin.install "ip-auth_0.1.0_darwin_amd64" => "ip-auth"
+        bin.install "ip-auth_0.1.1_darwin_amd64" => "ip-auth"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/sj14/ip-auth/releases/download/v0.1.0/ip-auth_0.1.0_darwin_arm64"
-      sha256 "46cc86cfc3eaccbc4f98121350a5cdfc926dd9e63909d61cb6723bf5254e88e4"
+      url "https://github.com/sj14/ip-auth/releases/download/v0.1.1/ip-auth_0.1.1_darwin_arm64"
+      sha256 "d05f1b026c76e7dd8b53ba920aec8e87cd7294c398a3dbea8c698fc29ea6934f"
 
       def install
-        bin.install "ip-auth_0.1.0_darwin_arm64" => "ip-auth"
+        bin.install "ip-auth_0.1.1_darwin_arm64" => "ip-auth"
       end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/sj14/ip-auth/releases/download/v0.1.0/ip-auth_0.1.0_linux_amd64"
-        sha256 "f1dc5c5d5cd1a4b9317960541bb0309b6cb3af2ec7ce98e8057ba94ee74db364"
-
-        def install
-          bin.install "ip-auth_0.1.0_linux_amd64" => "ip-auth"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/sj14/ip-auth/releases/download/v0.1.1/ip-auth_0.1.1_linux_amd64"
+      sha256 "9da7f91f3a1936771b4dca59d2efdaed1565dcb23e46c8dd32c36ca702badc47"
+      def install
+        bin.install "ip-auth_0.1.1_linux_amd64" => "ip-auth"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/sj14/ip-auth/releases/download/v0.1.0/ip-auth_0.1.0_linux_arm64"
-        sha256 "7d36b868318db92a6929af53dc4178c609b28d0aedab7da3ebce44fa13bb5f9c"
-
-        def install
-          bin.install "ip-auth_0.1.0_linux_arm64" => "ip-auth"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/sj14/ip-auth/releases/download/v0.1.1/ip-auth_0.1.1_linux_arm64"
+      sha256 "82917d637d52fc94f7b77f3247dcb39f27f10a65d28bd0cf7c4a2263b21b7005"
+      def install
+        bin.install "ip-auth_0.1.1_linux_arm64" => "ip-auth"
       end
     end
   end
