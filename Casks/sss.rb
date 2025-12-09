@@ -12,12 +12,12 @@ cask "sss" do
   on_macos do
     on_intel do
       url "https://github.com/sj14/sss/releases/download/v#{version}/sss_#{version}_darwin_amd64"
-      sha256 "63d62e2750cb57517614bed749846b2867edf528db1f117fe570f67c666c12f0"
+      sha256 "1a890f0d3a5b5a47b059feeaf52b2b060a9ceaebc281df29d3a141915ef41390"
       binary "sss_0.1.0_darwin_amd64", target: "sss"
     end
     on_arm do
       url "https://github.com/sj14/sss/releases/download/v#{version}/sss_#{version}_darwin_arm64"
-      sha256 "0b2b8c91ea809f54a53f77a80ded9ddd326beb90005c0807080b62e7487dc034"
+      sha256 "0646c89f330962b3d5422c3afbe247ab8f673d45d4f1ed64125ceaf9be2bf345"
       binary "sss_0.1.0_darwin_arm64", target: "sss"
     end
   end
@@ -25,12 +25,12 @@ cask "sss" do
   on_linux do
     on_intel do
       url "https://github.com/sj14/sss/releases/download/v#{version}/sss_#{version}_linux_amd64"
-      sha256 "186d7dac9ad36230963ec7a394b821d862eb5c45960098d617ab84af2e5f9d73"
+      sha256 "a32d8d7ad3bbd04d74a4e46819379f59805102841ebcc3184d610a0db145ed92"
       binary "sss_0.1.0_linux_amd64", target: "sss"
     end
     on_arm do
       url "https://github.com/sj14/sss/releases/download/v#{version}/sss_#{version}_linux_arm64"
-      sha256 "44dee3e4735d3ba4bc68b761fcf2880d70323567c63c3ba977f7aca1cffe27ee"
+      sha256 "b998bb11b56d442208882a8eda0bc51a248a62a7021fc83a1d8de32c233f6fff"
       binary "sss_0.1.0_linux_arm64", target: "sss"
     end
   end
