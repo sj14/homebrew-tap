@@ -3,7 +3,7 @@ cask "sss" do
   name "sss"
   desc "S3 client"
   homepage ""
-  version "0.1.0"
+  version "0.2.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,26 +12,26 @@ cask "sss" do
   on_macos do
     on_intel do
       url "https://github.com/sj14/sss/releases/download/v#{version}/sss_#{version}_darwin_amd64"
-      sha256 "1a890f0d3a5b5a47b059feeaf52b2b060a9ceaebc281df29d3a141915ef41390"
-      binary "sss_0.1.0_darwin_amd64", target: "sss"
+      sha256 "dfd68ba5b95debbde11db4297c06ce515d78993e3b859c0b61691e012e3f33e6"
+      binary "sss_0.2.0_darwin_amd64", target: "sss"
     end
     on_arm do
       url "https://github.com/sj14/sss/releases/download/v#{version}/sss_#{version}_darwin_arm64"
-      sha256 "0646c89f330962b3d5422c3afbe247ab8f673d45d4f1ed64125ceaf9be2bf345"
-      binary "sss_0.1.0_darwin_arm64", target: "sss"
+      sha256 "41cc7804d952ed6a8b69ce385b58507218ae55bbcbab648e5a22d77ef460e4dc"
+      binary "sss_0.2.0_darwin_arm64", target: "sss"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/sj14/sss/releases/download/v#{version}/sss_#{version}_linux_amd64"
-      sha256 "a32d8d7ad3bbd04d74a4e46819379f59805102841ebcc3184d610a0db145ed92"
-      binary "sss_0.1.0_linux_amd64", target: "sss"
+      sha256 "816f0b1b41a2e1031219e035c14619ad7922f860eee877f893ea691fef06854a"
+      binary "sss_0.2.0_linux_amd64", target: "sss"
     end
     on_arm do
       url "https://github.com/sj14/sss/releases/download/v#{version}/sss_#{version}_linux_arm64"
-      sha256 "b998bb11b56d442208882a8eda0bc51a248a62a7021fc83a1d8de32c233f6fff"
-      binary "sss_0.1.0_linux_arm64", target: "sss"
+      sha256 "49dfe038d7b6485a6b8e6ae868d7a2921dbdca3fa0bc621d3c9620595901a10d"
+      binary "sss_0.2.0_linux_arm64", target: "sss"
     end
   end
 
